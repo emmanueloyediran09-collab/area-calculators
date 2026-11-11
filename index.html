@@ -3,66 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta name="theme-color" content="#f2f4ef">
+  <title>Shape &amp; Measure | Area and BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        // area of a triangle
-        const b=29
-        const h=3
-        const areaOfTriangle= 0.5 * b * h
-        console.log(areaOfTriangle);
-        
-        //area of square
-        const l=29
-        const areaOfSquare= l*l
-        console.log(areaOfSquare);
-        
-        
-        // area of a circle
-        const pie = 3.12
-        const r = 2
-        const areaOfcircle= pie*(r**2)
-        console.log(areaOfcircle);
+  <main class="page-shell">
+    <div class="masthead"><span class="mark" aria-hidden="true">S</span> Shape &amp; Measure</div>
+    <header class="intro">
+      <p class="eyebrow">A small measurement toolkit</p>
+      <h1>Find the area.<br>Make sense of the shape.</h1>
+      <p class="intro-copy">Enter the measurements for a shape to work out its area, or use the final tool to calculate body mass index.</p>
+    </header>
 
-        //area of quadilateral
-        const d1=23
-        const d2=13
-        const sin45=0.707
-        const areaOfQuadilateral=0.5 * d1 * d2 * sin45
-        console.log(areaOfQuadilateral);
+    <section class="calculator-grid" aria-label="Calculators">
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">01</span><h2>Triangle</h2></div>
+        <div class="field-grid">
+          <label class="field" for="base">Base<input type="number" step="any" id="base" placeholder="Enter base"></label>
+          <label class="field" for="height">Height<input type="number" step="any" id="height" placeholder="Enter height"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display" aria-live="polite"></output><button type="button" onclick="show()">Calculate</button></div>
+      </article>
 
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">02</span><h2>Square</h2></div>
+        <div class="field-grid">
+          <label class="field" for="lenght">Side length<input type="number" step="any" id="lenght" placeholder="Enter side length"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display1" aria-live="polite"></output><button type="button" onclick="show1()">Calculate</button></div>
+      </article>
 
-        //area of rhombus
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">03</span><h2>Circle</h2></div>
+        <div class="field-grid">
+          <label class="field" for="radius">Radius<input type="number" step="any" id="radius" placeholder="Enter radius"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display2" aria-live="polite"></output><button type="button" onclick="show2()">Calculate</button></div>
+      </article>
 
-        const a1=23
-        const a2=13
-        const areaOfRhombus=0.5 * a1 * a2 
-        console.log(areaOfRhombus);
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">04</span><h2>Quadrilateral</h2></div>
+        <div class="field-grid">
+          <label class="field" for="d1">First diagonal<input type="number" step="any" id="d1" placeholder="Enter first diagonal"></label>
+          <label class="field" for="d2">Second diagonal<input type="number" step="any" id="d2" placeholder="Enter second diagonal"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display3" aria-live="polite"></output><button type="button" onclick="show3()">Calculate</button></div>
+      </article>
 
-      
-        // area of trapezium
-         const d=2
-        const c=4
-        const h1=2
-        const areaOfTrapezium=0.5 * (d + c) * h1
-        console.log(areaOfTrapezium);
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">05</span><h2>Rhombus</h2></div>
+        <div class="field-grid">
+          <label class="field" for="a1">Base<input type="number" step="any" id="a1" placeholder="Enter base"></label>
+          <label class="field" for="a2">Height<input type="number" step="any" id="a2" placeholder="Enter height"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display4" aria-live="polite"></output><button type="button" onclick="show4()">Calculate</button></div>
+      </article>
 
-        // area of parallelogram
-        const s=3
-        const h3=7
-        const areaOfParallelogram=s * h3
-        console.log(areaOfParallelogram);
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">06</span><h2>Trapezium</h2></div>
+        <div class="field-grid">
+          <label class="field" for="d">First parallel side<input type="number" step="any" id="d" placeholder="Enter first side"></label>
+          <label class="field" for="c">Second parallel side<input type="number" step="any" id="c" placeholder="Enter second side"></label>
+          <label class="field" for="h1">Height<input type="number" step="any" id="h1" placeholder="Enter height"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display5" aria-live="polite"></output><button type="button" onclick="show5()">Calculate</button></div>
+      </article>
 
-        //BMI
+      <article class="calculator-card">
+        <div class="card-heading"><span class="card-number">07</span><h2>Parallelogram</h2></div>
+        <div class="field-grid">
+          <label class="field" for="s">Base<input type="number" step="any" id="s" placeholder="Enter base"></label>
+          <label class="field" for="h3">Height<input type="number" step="any" id="h3" placeholder="Enter height"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display6" aria-live="polite"></output><button type="button" onclick="show6()">Calculate</button></div>
+      </article>
 
-        const weightInKg=200
-        const heigthInMeter= 10
-        const BMI = weightInKg/(heigthInMeter)**2
-        console.log(BMI);
-        
-
-        
-    </script>
+      <article class="calculator-card calculator-card--feature">
+        <div class="card-heading"><span class="card-number">08</span><h2>Body mass index</h2></div>
+        <div class="field-grid">
+          <label class="field" for="weightinkg">Weight in kilograms<input type="number" step="any" id="weightinkg" placeholder="Enter weight"></label>
+          <label class="field" for="heightinmeter">Height in metres<input type="number" step="any" id="heightinmeter" placeholder="Enter height"></label>
+        </div>
+        <div class="card-footer"><output class="result" id="display7" aria-live="polite"></output><button type="button" onclick="show7()">Calculate</button></div>
+      </article>
+    </section>
+    <p class="page-note">Results are based on the measurements you enter.</p>
+  </main>
+    <script src="script.js"></script>
 </body>
 </html>
